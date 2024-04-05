@@ -9,11 +9,11 @@ connection.once('open', async () => {
 
     await User.insertMany(userSeeds);
 
-    for (Thought of thoughtSeeds) { // loop thru all thoughts
+    for (thought of thoughtSeeds) { // loop thru all thoughts
         const user = userSeeds[Math.floor(Math.random() * userSeeds.length)]// create a random user.
 
         const newThought = await Thought.insertMany({
-            ...Thought, // create a new thought and assign it to the random user
+            ...thought, // create a new thought and assign it to the random user
             userId: user.id,
             username: user.username
         })
