@@ -1,62 +1,27 @@
 const connection = require('../config/connection');
-const { User, Thought } = require('../models');
-
-const users = [
-    {
-        username: 'Adam',
-        email: 'adam@gmail.com',
-    },
-    {
-        username: 'Brenda',
-        email: 'brenda@gmail.com'
-    },
-    {
-        username: 'Carol',
-        email: 'carol@gmail.com'
-    },
-    {
-        username: 'Dennis',
-        email: 'dennis@gmail.com'
-    },
-    {
-        username: 'Eric',
-        email: 'eric@gmail.com'
-    },
-    {
-        username: 'Frank',
-        email: 'frank@gmail.com'
-    },
-    {
-        username: 'Gabby',
-        email: 'gabby@gmail.com'
-    },
-    {
-        username: 'Henry',
-        email: 'henry@gmail.com'
-    },
-    {
-        username: 'Isaac',
-        email: 'isaac@gmail.com'
-    },
-    {
-        username: 'Jonas',
-        email: 'jonas@gmail.com'
-    },
-    {
-        username: 'Kevin',
-        email: 'kevin@gmail.com'
-    },
-]
-
-connection.on('error', (err) => err);
+const { Thought, User } = require("../models");
+const userSeeds = require("./userdata.json");
+const thoughtSeeds = require("./thoughtdata.json");
 
 connection.once('open', async () => {
-    console.log('connected');
-    await Thought.deleteMany({});
     await User.deleteMany({});
+    await Thought.deleteMany({});
 
-    await User.collection.insertMany(users);
+    await User.insertMany(userSeeds);
 
-    console.info('Seeding complete! 🌱');
-    process.exit(0);
-});
+    for (Thought of thoughtSeeds) { // loop thru all thoughts
+        const user = userSeeds[Math.floor(Math.random() * userSeeds.length)]// create a random user.
+
+        const newThought = await Thought.insertMany({
+            ...Thought, // create a new thought and assign it to the random user
+            userId: user.id,
+            username: user.username
+        })
+
+         // update the random user
+      // new thought's id is pushed to user's userThoughts array
+        await User.findOneAndUpdate({ _id: user.id }, { $addToSet: { thoughts: newThought }}, {new: true })
+    }
+    console.log('Database seeded successfully! ');
+    process.exit(0);  // once the for loop is done, stop the process 
+})
