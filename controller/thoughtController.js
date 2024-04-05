@@ -37,8 +37,8 @@ updateThought(req, res) {
 },
 
 // Get thoughts by id
-getThoughtById({ params }, res) {
-    Thought.findOne({ _id: params.id })
+getThoughtById(req, res) {
+    Thought.findOne({ _id: req.params.id })
     .then((dbThoughtData) => {
         // If no thought is found
         if (!dbThoughtData) {
