@@ -1,9 +1,10 @@
 {
-  "name": "social-network-api", 
+  "name": "social-network-api",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node utils/seed.js"
   },
   "repository": {
     "type": "git",
@@ -12,6 +13,7 @@
   "homepage": "https://github.com/ccarroll929/social-network-api#readme",
   "dependencies": {
     "express": "^4.19.2",
+    "mongodb": "^6.5.0",
     "mongoose": "^8.2.4"
   }
 }
