@@ -58,7 +58,7 @@ deleteThought(req, res) {
   // Update a Thought
 updateThought(req, res) {
     Thought.findOneAndUpdate(
-    { _id: req.params.thoughtId },
+    { _id: req.params.id },
     { $set: req.body },
     { runValidators: true, new: true }
     )
