@@ -57,6 +57,7 @@ const userController = {
     },
     // Remove friend with userId and friendsId
     removeFriend(req, res) {
+        console.log('You have removed a friend')
         User.findOneAndUpdate({
             _id: req.params.id
         }, {
