@@ -3,7 +3,7 @@
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Contribute](#contributing)
+  * [Contributing](#contributing)
   * [Questions](#questions) 
 ## Description: 
 An API for a social network web application where users can share their thoughts, react to a friend's thoughts,  and create a friends list.
