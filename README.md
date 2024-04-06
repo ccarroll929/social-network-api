@@ -8,7 +8,7 @@
 ## Description: 
 An API for a social network web application where users can share their thoughts, react to a friend's thoughts,  and create a friends list.
 This API features `MongoDB` (a NoSQL database) with seeded data, `Express.js` for handling API routes, and `Mongoose ODM` to create our User and Thought/Reaction models.
-Upon starting the server, we can then use [Insomnia](https://insomnia.rest/download) to make `GET`, `POST`, `PUT`, and `DELETE` requests which allow us to view, create, edit, and delete users, thoughts, and reactions. 
+Upon starting the server, we can then use Insomnia to make `GET`, `POST`, `PUT`, and `DELETE` requests which allow us to view, create, edit, and delete users, thoughts, and reactions. 
 
 In this [walkthrough video](https://drive.google.com/file/d/1w18IRo8NiMAN3eMSQqwUz6kttnTFVDMZ/view), I will demonstrate the API's functionality using Insomnia. 
 
@@ -17,6 +17,7 @@ In this [walkthrough video](https://drive.google.com/file/d/1w18IRo8NiMAN3eMSQqw
 
 ## Installation
   * [Node.js](https://nodejs.org/en). Use command "node -v" in the terminal to see if it is already installed on your computer
+  * [Insomnia](https://insomnia.rest/download) 
   * [MongoDB](https://www.mongodb.com/try/download/community)
 
 ## Usage
