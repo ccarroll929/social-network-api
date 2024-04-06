@@ -12,7 +12,7 @@ Upon starting the server, we can then use [Insomnia](https://insomnia.rest/downl
 
 In this [walkthrough video](https://drive.google.com/file/d/1w18IRo8NiMAN3eMSQqwUz6kttnTFVDMZ/view), I will demonstrate the API's functionality using Insomnia. 
 
-## Screenshots of Application 
+## Screenshot of Application in Insomnia 
 ![](./assets/images/application-screenshot.PNG) 
 
 ## Installation
